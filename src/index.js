@@ -1,13 +1,17 @@
 import React from 'react';
+import {NotificationContainer} from 'react-notifications';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import 'react-notifications/lib/notifications.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <App />
-  </React.StrictMode>,
+    <NotificationContainer/>
+  </>,
   document.getElementById('root')
 );
 

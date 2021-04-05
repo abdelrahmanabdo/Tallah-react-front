@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Join(props) {
+const Join = (props) => {
   const [state, setState] = useState('');
 
   useEffect(() => {

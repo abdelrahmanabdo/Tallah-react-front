@@ -1,0 +1,28 @@
+.container.blog {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  .blogs-container {
+    flex: 3;
+  }
+  .latest-container {
+    flex: 1;
+    padding: 0 0 0 20px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .container{ 
+    flex-direction: column;
+  }
+  .right {
+    flex: 1;
+    padding: 20px 0;
+  }
+}
+
+@media all and (max-width: 799px) {
+  .container.blog {
+    flex-direction: column;
+  }
+}

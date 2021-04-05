@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function Contact(props) {
+const Home = (props) => {
   const [state, setState] = useState('');
 
   useEffect(() => {
@@ -11,9 +11,9 @@ function Contact(props) {
 
   return (
     <>
-      Contact
+      Home
     </>
   )
 }
 
-export default Contact;
+export default Home;
