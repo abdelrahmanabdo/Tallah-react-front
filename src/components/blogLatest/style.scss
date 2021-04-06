@@ -19,6 +19,8 @@
 }
 
 .latest-blogs-container {
+  padding-right: 0 !important;
+
   .header {
     padding :2px;
     color: #FFF;
@@ -26,7 +28,6 @@
     text-align: center;
     background-color: #d4af37;
   }
-
   .list {
     display: flex;
     flex-direction: column;

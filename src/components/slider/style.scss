@@ -1,0 +1,93 @@
+.container.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding:30px;
+  width: 100%;
+  height: auto;
+  min-height: 65vh;
+  margin-bottom: 20px;
+  .left-blogs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .blog-item {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      &:hover {
+        border: 1px solid #CCC;
+        transform: scale(1.2);
+        transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+  }
+  .blog-details {
+    flex: .7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    background-color: #FFF;
+    opacity: .9;
+    border-radius: 10px;
+    padding: 25px;
+    .tags {
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+    .title {
+      font-size: 37px;
+      font-family: 'Playfair Display';
+      width: 70%;
+      margin-bottom: 30px;
+    }
+    .text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 10; /* number of lines to show */
+      -webkit-box-orient: vertical;
+    }
+    .continue-reading-button {
+      align-self: flex-start;
+      justify-content: flex-end;
+      width: 45%;
+      border-radius: 10px;
+      background-color: transparent;
+      border: 2px solid #CCC;
+      margin-top: 25px;
+      padding: 7px;
+      text-align: center;
+      color: #000;
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .container.slider {
+    padding: 15px !important;
+    min-height: none;
+    .left-blogs {
+      flex-direction: row;
+      margin-bottom: 20px;
+      .blog-item {
+        margin-right: 10px;
+      }
+    }
+    .blog-details {
+      .text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines to show */
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}

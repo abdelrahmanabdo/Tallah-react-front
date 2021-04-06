@@ -1,31 +1,36 @@
-import React from 'react'
-import './style.scss';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import moment from 'moment';
+import {Link, NavLink} from 'react-router-dom';
+
 // Imports
 import Image from '../../assets/images/about-us-image.png';
+import './style.scss';
 
 export default function BlogBox({data}) {
   return (
     <div className="box-wrapper">
       <Link to="/chic-chat/details" className="left">
-        <img src={Image} />
+        <img src={data.image ? data.image.image : Image} />
       </Link>
       <div className="right">
         <div className="tags">
-          BEAUTY, LIFESTYLE, WOMENOLOGY
+          { data.hashtags?.reduce((acc, cur) => acc + cur.toUpperCase() + ', ', '') }
         </div>
-        <Link to="/chic-chat/details" className="title">
+        <NavLink 
+          to={'/chic-chat/details/' + data.id} 
+          className="title"
+        >
           {data.title}
-        </Link>
+        </NavLink>
         <div className='details'>
           <span className='section'>
-            By Admin
+            {data.user?.name || 'Admin'}
           </span>
           <span className='section'>
-            {data.created_at}
+          <i className="icon-message fa fa-clock-o mr-1"/> { moment(data.created_at).fromNow()}
           </span>
           <span className='section'>
-            <i className="icon-message fa fa-comment mr-1"/> 4
+            <i className="icon-message fa fa-comment mr-1"/> {data.comments_count}
           </span>
         </div>
         <p className="description">

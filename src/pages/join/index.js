@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+import './style.scss';
+
 const Join = (props) => {
   const [state, setState] = useState('');
 
-  useEffect(() => {
-    return () => {
-
-    }
-  }, []);
-
   return (
-    <>
-      Join
-    </>
+    <div className="container join">
+      <div className="coming-soon-container">
+        <h3>Coming soon !!!!!</h3>
+      </div>
+    </div>
   )
 }
 

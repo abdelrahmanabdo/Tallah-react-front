@@ -1,0 +1,17 @@
+.container.home {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+@media all and (max-width: 1024px) {
+  .container{ 
+    flex-direction: column;
+  }
+  .right {
+    flex: 1;
+    padding: 20px 0;
+  }
+}

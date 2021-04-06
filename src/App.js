@@ -1,4 +1,4 @@
-import './index.css';
+import './index.scss';
 import Header from './components/header';
 import Home from './pages/home';
 import About from './pages/about';
@@ -23,7 +23,7 @@ function App() {
             <Route path="/chic-chat-blog/:category">
               <Blog />
             </Route>
-            <Route path="/chic-chat/details">
+            <Route path="/chic-chat/details/:id">
               <Details />
             </Route>
             <Route path="/about">

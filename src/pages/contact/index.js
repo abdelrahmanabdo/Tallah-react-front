@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {NotificationManager} from 'react-notifications';
 import Image from '../../assets/images/contact-me-page.jpeg';
 
-import './style.css';
+import './style.scss';
 import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 

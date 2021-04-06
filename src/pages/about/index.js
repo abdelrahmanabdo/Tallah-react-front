@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
+import './style.scss';
 import AboutImage from '../../assets/images/about-us-image.png';
 
 const About = (props) => {

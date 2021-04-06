@@ -11,7 +11,10 @@ module.exports = {
     modules: [path.resolve(__dirname, 'src'), 'node_modules']
   },
   devServer: {
-    contentBase: path.join(__dirname, 'src')
+    contentBase: path.join(__dirname, 'src'),
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   },
   plugins: [new HtmlWebpackPlugin({
     template: path.join(__dirname, 'src', 'index.html')

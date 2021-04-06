@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Slider from '../../components/slider';
+import Blog from '../blog';
+
+import './style.scss';
 
 const Home = (props) => {
   const [state, setState] = useState('');
@@ -10,9 +14,10 @@ const Home = (props) => {
   }, []);
 
   return (
-    <>
-      Home
-    </>
+    <div className="container home">
+      <Slider />
+      <Blog />
+    </div>
   )
 }
 

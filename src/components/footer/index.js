@@ -1,8 +1,9 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 import instagram from '../../assets/icons/instagram-footer.png';
 import facebook from '../../assets/icons/fb-footer.png';
 import gmail from '../../assets/icons/gmail-footer.png';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -22,71 +23,49 @@ export default function Footer() {
         <div className="menu-list">
           <span className="list-title">Archive</span>
           <ul className="menu-items">
-            <li className="list-item">
-              <a href="#">
+            <Link className="list-item">
                 May 2020
-              </a>
-            </li>
-            <li className="list-item">
-              <a href="#">
+            </Link>
+            <Link className="list-item">
                 May 2020
-              </a>
-            </li>
-            <li className="list-item">
-              <a href="#">
+            </Link>
+            <Link className="list-item">
                 May 2020
-              </a>
-            </li>
+            </Link>
           </ul>
         </div>
         <div className="menu-list">
           <span className="list-title">Categories</span>
           <ul className="menu-items">
-            <li className="list-item">
-              <a href="#">
+            <Link to="/chic-chat-blog/Beauty" className="list-item">
                 Beauty
-              </a>
-            </li>
-            <li className="list-item">
-              <a href="#">
+            </Link>
+            <Link to="/chic-chat-blog/Fashion"  className="list-item">
                 Fashion
-              </a>
-            </li>
-            <li className="list-item">
-              <a href="#">
+            </Link>
+            <Link to="/chic-chat-blog/LifeStyle"  className="list-item">
                 LifeStyle
-              </a>
-            </li>
-            <li className="list-item">
-             <a href="#">
+            </Link>
+            <Link to="/chic-chat-blog/Womenology"  className="list-item">
                 Womenology
-              </a>
-            </li>
-            <li className="list-item">  
-             <a href="#">
+            </Link>
+            <Link to="/chic-chat-blog/Videos"  className="list-item">  
                 Videos
-              </a>
-            </li>
+            </Link>
           </ul>
         </div>
         <div className="menu-list">
           <span className="list-title">Contact Info</span>
           <ul className="menu-items">
-            <li className="list-item mb-3">
-              <a href="#">
+            <Link className="list-item mb-3">
                <i className="fa fa-map mr-2" />  72, Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              </a>
-            </li>
-            <li className="list-item mb-3">
-              <a href="#">
+            </Link>
+            <Link className="list-item mb-3">
                <i className="fa fa-phone mr-2" /> Phone: (111) 211 - 2222
-              </a>
-            </li>
-            <li className="list-item">
-              <a href="#">
+            </Link>
+            <Link className="list-item">
                <i className="fa fa-envelope mr-2" /> Email: dev.abdelrahman
-              </a>
-            </li>
+            </Link>
           </ul>
         </div>
       </div>

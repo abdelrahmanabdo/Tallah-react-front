@@ -13,27 +13,27 @@ export default function Header() {
       <div className="head">
         <ul className="left-menu-container">
           <li className="menu-item">
-            <Link className="category-link" to="/chic-chat-blog/fashion">
+            <Link className="category-link" to="/chic-chat-blog/Fashion">
               Fashion
             </Link>
           </li>
           <li className="menu-item">
-            <Link className="category-link" to="/chic-chat-blog/beauty">
+            <Link className="category-link" to="/chic-chat-blog/Beauty">
               Beauty
             </Link>
           </li>
           <li className="menu-item">
-            <Link className="category-link" to="/chic-chat-blog/lifeStyle">
+            <Link className="category-link" to="/chic-chat-blog/LifeStyle">
               LifeStyle
             </Link>
           </li>
           <li className="menu-item">
-            <Link className="category-link" to="/chic-chat-blog/womenology">
+            <Link className="category-link" to="/chic-chat-blog/Womenology">
               Womenology
             </Link>
           </li>
           <li className="menu-item">
-            <Link className="category-link" to="/chic-chat-blog/videos">
+            <Link className="category-link" to="/chic-chat-blog/Videos">
               Videos
             </Link>
           </li>
@@ -65,14 +65,14 @@ export default function Header() {
           </a>
         </div>
       </div>
-      <div className="logo">
+      <Link to="/" className="logo">
         <img 
           src={logo}
           className="logo-img"
         />
-      </div>
+      </Link>
       <div className="nav">
-        <NavLink className="link" to="/chic-chat-blog/all">
+        <NavLink className="link" to="/chic-chat-blog/All">
           Chic chat blog
         </NavLink>
         <NavLink className="link" to="/about">
