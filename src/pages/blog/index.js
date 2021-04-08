@@ -38,7 +38,7 @@ const Blog = (props) => {
           <>
             <div className="blogs-container">
               {
-                data.length === 0
+                data && data.length === 0
                 ? <h2> No Blogs </h2>
                 : data.map((blog) => <BlogBox data={blog} />)
               }

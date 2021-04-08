@@ -27,10 +27,10 @@ const Contact = (props) => {
    * @private
    */
   const validate = () => {
-    ;
     if (!data.name) return NotificationManager.error('Please insert your name'), false;
     if (!data.email) return NotificationManager.error('Please insert your E-mail'), false;
     if (!data.subject) return NotificationManager.error('Please insert Message subject'), false;
+    if (data.subject.length < 3) return NotificationManager.error('Subject must be at least 3 characters'), false;
     if (!data.message) return NotificationManager.error('Please insert your Message'), false;
     return true;
   }
@@ -51,7 +51,12 @@ const Contact = (props) => {
           setData({});
         }
       })
-      .catch((err) => setIsLoading(false), NotificationManager.error('An error happened, please try again'));
+      .catch((err) => {
+        const {errors} = err.response.data;
+        setIsLoading(false);
+        Object.keys(errors)
+          .forEach(e => NotificationManager.error(errors[e][0]));
+      });
   }
 
   return (
@@ -68,7 +73,7 @@ const Contact = (props) => {
           </label>
           <input 
             onChange={(v) => onChangeValue('name', v.target.value)}
-            value={data.name}
+            defaultValue={data.name}
             className="form-input"
           />
         </div>
@@ -78,8 +83,7 @@ const Contact = (props) => {
           </span>
           <input 
             onChange={(v) => onChangeValue('email', v.target.value)}
-
-            value={data.email}
+            defaultValue={data.email}
             className="form-input"
           />
         </div>
@@ -89,7 +93,7 @@ const Contact = (props) => {
           </span>
           <input 
             onChange={(v) => onChangeValue('subject', v.target.value)}
-            value={data.subject}
+            defaultValue={data.subject}
             className="form-input"
           />
         </div>
@@ -99,7 +103,7 @@ const Contact = (props) => {
           </span>
           <textarea 
             onChange={(v) => onChangeValue('message', v.target.value)}
-            value={data.message}
+            defaultValue={data.message}
             className="form-input"
             rows={7}
           >

@@ -13,7 +13,8 @@ export default {
     'gifts': 'gifts',
     'registrationChoices': 'registration-choices',
     'specializations' : 'specializations',
-
+    'about': 'about',
+    'settings': 'settings',
     
     //Authorized  
     /**

@@ -1,13 +1,34 @@
-import React from 'react';
-import './style.css';
-import logo from '../../logo.png';
+import React, { useState, useEffect } from 'react';
+
+import { NavLink, Link } from 'react-router-dom';
+
 import instagram from '../../assets/icons/instagram.svg';
 import facebook from '../../assets/icons/facebook.svg';
 import gmail from '../../assets/icons/gmail.svg';
 import linkedin from '../../assets/icons/linkedin.svg';
-import { NavLink, Link } from 'react-router-dom';
+
+import api from '../../config/api';
+import endpoints from '../../config/endpoints';
+
+import './style.css';
+import logo from '../../logo.png';
 
 export default function Header() {
+
+  const [data, setData] = useState([]);
+
+  /**
+   * Get settings data
+   * @private
+   */
+  const getData = async () => {
+    await api
+      .get(endpoints.settings)
+      .then(res => setData(res.data.data));
+  }
+
+  useEffect(() => getData(), []);
+
   return (
     <div className="header-wrapper">
       <div className="head">
@@ -39,25 +60,25 @@ export default function Header() {
           </li>
         </ul>
         <div className="social-container">
-          <a href="#" className="social-link">
+          <a href={data?.instagram_url} className="social-link">
             <img 
               src={instagram}
               className="social-icon"
             />
           </a>
-          <a href="#" className="social-link">
+          <a href={data?.facebook_url} className="social-link">
             <img 
               src={facebook}
               className="social-icon"
             />
           </a>
-          <a href="#" className="social-link">
+          <a href={data?.google_url} className="social-link">
             <img 
               src={gmail}
               className="social-icon"
             />
           </a>
-          <a href="#" className="social-link">
+          <a href={data?.linkedIn_url} className="social-link">
             <img 
               src={linkedin}
               className="social-icon"

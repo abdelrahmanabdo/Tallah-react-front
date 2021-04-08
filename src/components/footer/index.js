@@ -1,21 +1,39 @@
-import React from 'react';
-import './style.scss';
+import React, { useState, useEffect } from 'react';
 import instagram from '../../assets/icons/instagram-footer.png';
 import facebook from '../../assets/icons/fb-footer.png';
 import gmail from '../../assets/icons/gmail-footer.png';
 import { Link } from 'react-router-dom';
+import api from '../../config/api';
+import endpoints from '../../config/endpoints';
+
+import './style.scss';
+
 
 export default function Footer() {
+  const [data, setData] = useState([]);
+
+  /**
+   * Get settings data
+   * @private
+   */
+  const getData = async () => {
+    await api
+      .get(endpoints.settings)
+      .then(res => setData(res.data.data));
+  }
+
+  useEffect(() => getData(), []);
+
   return (
     <div className="footer-wrapper">
       <div className="head-container">
-        <a href="#" className="social-link">
+        <a href={data?.instagram_url} className="social-link">
           <img src={instagram} className="social-icon" />
         </a>
-        <a href="#" className="social-link">
+        <a href={data?.facebook_url} className="social-link">
           <img src={facebook} className="social-icon" />
         </a>
-        <a href="#" className="social-link">
+        <a href={data?.google_url} className="social-link">
           <img src={gmail} className="social-icon" />
         </a>
       </div>
@@ -23,7 +41,7 @@ export default function Footer() {
         <div className="menu-list">
           <span className="list-title">Archive</span>
           <ul className="menu-items">
-            <Link className="list-item">
+            {/* <Link className="list-item">
                 May 2020
             </Link>
             <Link className="list-item">
@@ -31,7 +49,7 @@ export default function Footer() {
             </Link>
             <Link className="list-item">
                 May 2020
-            </Link>
+            </Link> */}
           </ul>
         </div>
         <div className="menu-list">
@@ -58,34 +76,34 @@ export default function Footer() {
           <span className="list-title">Contact Info</span>
           <ul className="menu-items">
             <Link className="list-item mb-3">
-               <i className="fa fa-map mr-2" />  72, Lorem ipsum dolor sit consectetur adipiscing elit, sed do eiusmod tempor incididunt
+               <i className="fa fa-map mr-2" />  {data?.address}
             </Link>
             <Link className="list-item mb-3">
-               <i className="fa fa-phone mr-2" /> Phone: (111) 211 - 2222
+               <i className="fa fa-phone mr-2" /> Phone: {data?.phone_number}
             </Link>
             <Link className="list-item">
-               <i className="fa fa-envelope mr-2" /> Email: dev.abdelrahman
+               <i className="fa fa-envelope mr-2" /> Email: {data?.email}
             </Link>
           </ul>
         </div>
       </div>
       <div className="foot-container">
         <span>
-          © Copyright 2021 Tallah
+          © Copyright 2021 {data?.site_url || 'Tallah'}
         </span>
         <ul className="social-list">
-          <li className="social-list-item">
+          <a href={data?.twitter_url} className="social-list-item">
             <i className="fa fa-twitter" />
-          </li>
-          <li className="social-list-item">
+          </a>
+          <a href={data?.instagram_url} className="social-list-item">
             <i className="fa fa-instagram" />
-          </li>
-          <li className="social-list-item">
+          </a>
+          <a href={data?.linkedIn_url} className="social-list-item">
             <i className="fa fa-linkedin" />
-          </li>
-          <li className="social-list-item">
+          </a>
+          <a href={data?.facebook_url} className="social-list-item">
             <i className="fa fa-facebook" />
-          </li>
+          </a>
         </ul>
       </div>
     </div>

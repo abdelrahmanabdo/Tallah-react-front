@@ -5,12 +5,8 @@ import Blog from '../blog';
 import './style.scss';
 
 const Home = (props) => {
-  const [state, setState] = useState('');
 
   useEffect(() => {
-    return () => {
-
-    }
   }, []);
 
   return (

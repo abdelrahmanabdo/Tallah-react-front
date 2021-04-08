@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './style.scss';
 import AboutImage from '../../assets/images/about-us-image.png';
+import api from '../../config/api';
+import endpoints from '../../config/endpoints';
+import Spinner from '../../components/spinner';
 
 const About = (props) => {
-  const [state, setState] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
 
-  useEffect(() => {}, []);
+  /**
+   * Get about us data
+   * @private
+   */
+  const getData = async () => {
+    setIsLoading(true);
+    let url = endpoints.about;
+    await api
+      .get(url)
+      .then(res => setData(res.data.data), setIsLoading(false));
+  }
+
+  useEffect(() => getData(), []);
 
   return (
     <div className="container about">
@@ -15,13 +31,10 @@ const About = (props) => {
       />
       <div className="right">
         <h3 className="title">
-          Lorem ipsum dum daro
+          {data?.title}
         </h3>
         <p className="text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint oolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {data?.text}
         </p>
       </div>
     </div>
