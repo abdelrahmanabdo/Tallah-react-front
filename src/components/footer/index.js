@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { withNamespaces } from 'react-i18next';
+
 import instagram from '../../assets/icons/instagram-footer.png';
 import facebook from '../../assets/icons/fb-footer.png';
 import gmail from '../../assets/icons/gmail-footer.png';
@@ -9,7 +11,7 @@ import endpoints from '../../config/endpoints';
 import './style.scss';
 
 
-export default function Footer() {
+const  Footer = ({t}) => {
   const [data, setData] = useState([]);
 
   /**
@@ -38,42 +40,42 @@ export default function Footer() {
         </a>
       </div>
       <div className="content">
-        <div className="menu-list">
+        {/* <div className="menu-list">
           <span className="list-title">Archive</span>
           <ul className="menu-items">
-            {/* <Link className="list-item">
-                May 2020
-            </Link>
             <Link className="list-item">
                 May 2020
             </Link>
             <Link className="list-item">
                 May 2020
-            </Link> */}
+            </Link>
+            <Link className="list-item">
+                May 2020
+            </Link>
           </ul>
-        </div>
+        </div> */}
         <div className="menu-list">
-          <span className="list-title">Categories</span>
+          <span className="list-title">{t('categories')}</span>
           <ul className="menu-items">
-            <Link to="/chic-chat-blog/Beauty" className="list-item">
-                Beauty
-            </Link>
             <Link to="/chic-chat-blog/Fashion"  className="list-item">
-                Fashion
+                 {t('fashion')}
+            </Link>
+            <Link to="/chic-chat-blog/Beauty" className="list-item">
+                {t('beauty')}
             </Link>
             <Link to="/chic-chat-blog/LifeStyle"  className="list-item">
-                LifeStyle
+                 {t('lifeStyle')}
             </Link>
             <Link to="/chic-chat-blog/Womenology"  className="list-item">
-                Womenology
+                {t('womenology')}
             </Link>
             <Link to="/chic-chat-blog/Videos"  className="list-item">  
-                Videos
+                {t('videos')}
             </Link>
           </ul>
         </div>
         <div className="menu-list">
-          <span className="list-title">Contact Info</span>
+          <span className="list-title">{t('contactInfo')}</span>
           <ul className="menu-items">
             <Link className="list-item mb-3">
                <i className="fa fa-map mr-2" />  {data?.address}
@@ -88,7 +90,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="foot-container">
-        <span>
+        <span style={{textAlign: 'start'}}>
           © Copyright 2021 {data?.site_url || 'Tallah'}
         </span>
         <ul className="social-list">
@@ -108,4 +110,6 @@ export default function Footer() {
       </div>
     </div>
   )
-};
+}
+
+export default withNamespaces()(Footer);

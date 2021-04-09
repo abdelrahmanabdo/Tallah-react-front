@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withNamespaces } from 'react-i18next';
 import { useParams } from 'react-router';
 import moment from 'moment';
 import AboutImage from '../../assets/images/about-us-image.png';
@@ -9,7 +10,7 @@ import endpoints from '../../config/endpoints';
 import Spinner from '../../components/spinner';
 import BlogLatest from '../../components/blogLatest';
 
-export default function Details() {
+function Details({i18n}) {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState(null);
   const { id } = useParams();
@@ -44,7 +45,11 @@ export default function Details() {
         :
         data &&
         <>
-          <div className="left">
+          < div className = "left"
+          style = {{
+              paddingRight: i18n.language === 'ar' ? 0 : '20px',
+              paddingLeft: i18n.language === 'ar' ? '20px' : 0
+            }} >
             <img src={data.images.length ? data.images[0].image : AboutImage} className="blog-image" />
             <span className="tags">
               {data.hashtags?.reduce((acc, curr) => `${acc} ${curr.toUpperCase()}, `, '')}
@@ -66,7 +71,13 @@ export default function Details() {
             <div className="comment-container">
               <h5>Leave Comment</h5>
               <div className="form-header">
-                <div className="input-container">
+                < div 
+                  className = "input-container"
+                  style = {{
+                      marginRight: i18n.language === 'ar' ? 'unset' : '14px',
+                      marginLeft: i18n.language === 'ar' ? '14px' : 'unset'
+                    }} 
+                >
                   <label className="form-title">
                     Name *
                   </label>
@@ -77,7 +88,13 @@ export default function Details() {
                     rows={7}
                   />
                 </div>
-                <div className="input-container">
+                <div 
+                  className = "input-container"
+                  style = {{
+                      marginRight: i18n.language === 'ar' ? 'unset' : '14px',
+                      marginLeft: i18n.language === 'ar' ? '14px' : 'unset'
+                    }} 
+                >
                   <label className="form-title">
                     Email *
                   </label>
@@ -125,3 +142,5 @@ export default function Details() {
     </div>
   )
 }
+
+export default withNamespaces()(Details);

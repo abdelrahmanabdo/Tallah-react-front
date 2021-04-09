@@ -1,0 +1,39 @@
+{
+  "contactUs" :  "Contact Us",
+  "aboutUs" :  "About Us",
+  "joinUs": "Join Us",
+  "chicChatBlog": "Chic Chat Blog",
+
+  "fashion": "Fashion",
+  "beauty": "Beauty",
+  "lifeStyle": "LifeStyle",
+  "womenology": "Womenology",
+  "videos": "Videos",
+
+  "categories": "Categories",
+  "contactInfo": "Contact Info",
+
+  "searchHere": "Search Here....",
+  "latestPosts": "Latest Posts",
+
+  "getInTouch" : "Get In Touch",
+
+  "leaveComment": "Leave comment",
+  "name": "Name",
+  "yourName": "Your E-mail",
+  "subject": "Subject",
+  "yourMessage": "Your Message",
+  "email": "E-mail",
+  "yourEmail": "Your E-mail",
+  "website": "Website",
+  "comment": "Comment",
+  "send": "Send",
+  "submitComment": "Submit Comment",
+
+  "continueReading": "Continue Reading",
+
+  "subscriptionText": "Resting is as important as working, Kick off your shoes, let down your hair",
+  "subscriptionButtonText": "Reading Your Favorite Blog",
+
+  "copyright": "© Copyright 2021 Tallah"
+}

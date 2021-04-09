@@ -46,6 +46,7 @@ export default function Slider() {
             {
               data.map((blog) =>  <img 
                 className="blog-item" 
+                key={blog.id}
                 src={blog.image ? blog.image.image : Image} 
                 onClick={() => onSelectBlogToReview(blog)} 
               />)

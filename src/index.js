@@ -6,6 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-notifications/lib/notifications.css';
+import i18n  from  './i18n';
+
+// Language Handling
+const currentLang = localStorage.getItem('lang') || 'en';
+localStorage.setItem('lang', currentLang);
+i18n.changeLanguage(currentLang);
+const direction = currentLang === 'ar' ?
+  'rtl' :
+  'ltr';
+document
+  .getElementsByTagName('html')[0]
+  .setAttribute("dir", direction);
 
 ReactDOM.render(
   <>

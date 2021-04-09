@@ -39,8 +39,8 @@ const Blog = (props) => {
             <div className="blogs-container">
               {
                 data && data.length === 0
-                ? <h2> No Blogs </h2>
-                : data.map((blog) => <BlogBox data={blog} />)
+                ? <h2 style={{textAlign: 'start'}}> No Blogs </h2>
+                : data.map((blog) => <BlogBox data={blog}  key={blog.id} />)
               }
             </div>
             <BlogLatest />

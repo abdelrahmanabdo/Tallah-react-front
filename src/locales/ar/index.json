@@ -1,0 +1,39 @@
+{
+  "contactUs" :  "تواصل معنا",
+  "aboutUs" :  "عن طله",
+  "joinUs": "شاركنا",
+  "chicChatBlog": "المقالات",
+
+  "fashion": "Fashion",
+  "beauty": "Beauty",
+  "lifeStyle": "LifeStyle",
+  "womenology": "Womenology",
+  "videos": "Videos",
+
+  "categories": "الأقسام",
+  "contactInfo": "معلومات التواصل ",
+
+  "searchHere": "إبحث هنا ....",
+  "latestPosts": "أحدث المقالات",
+
+  "getInTouch" : "Get In Touch",
+
+  "leaveComment": "إترك تعليقك",
+  "name": "الإسم",
+  "yourName": "إسمك",
+  "subject": "الموضوع",
+  "yourMessage": "رسالتك",
+  "email": "البريد الإلكتروني",
+  "yourEmail": "بريدك الإلكتروني",
+  "website": "الموقع الالكتروني",
+  "comment": "التعليق",
+  "send": "إرسال",
+  "submitComment": "تأكيد التعليق",
+
+  "continueReading": "أكمل القراءة",
+
+  "subscriptionText": "Resting is as important as working, Kick off your shoes, let down your hair",
+  "subscriptionButtonText": "Reading Your Favorite Blog",
+
+  "copyright": ""
+}

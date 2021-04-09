@@ -8,7 +8,7 @@ import Contact from './pages/contact';
 import Footer from './components/footer';
 import Join from './pages/join';
 
-import { BrowserRouter,Switch, Router, Route } from 'react-router-dom';
+import { BrowserRouter, Switch,  Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Header/>
         <div className="page-content-wrapper">
           <Switch>
-            <Route exact path="/">
+            <Route exact path={['/', '']}>
               <Home />
             </Route>
             <Route path="/chic-chat-blog/:category">

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import { withNamespaces } from 'react-i18next';
 
 import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 import Image from '../../assets/images/about-us-image.png';
 import './style.scss';
 
-export default function BlogLatest() {
+function BlogLatest({t}) {
   const [data, setData] = useState([]);
 
   /**
@@ -28,7 +29,7 @@ export default function BlogLatest() {
         <input 
           className="search-input"
           type="text"
-          placeholder="Search here...."
+          placeholder={t('searchHere')}
         />
         <Link to="#" className='search-button'>
           <i className="fa fa-search" />
@@ -38,12 +39,12 @@ export default function BlogLatest() {
         data.length > 0 &&
         <div className="latest-blogs-container">
           <div className="header">
-            Latest Posts
+            {t('latestPosts')}
           </div>
           <div className="list">
             {
               data.map((blog) => {
-                return <div className="blog-item">
+                return <div className="blog-item" key={blog.id}>
                   <Link className="blog-image" to={"/chic-chat/details/" + blog.id}>
                     <img className="image"  src={blog.image ? blog.image.image : Image} />
                   </Link>
@@ -64,3 +65,5 @@ export default function BlogLatest() {
     </div>
   )
 }
+
+export default withNamespaces()(BlogLatest);
