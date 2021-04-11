@@ -24,11 +24,16 @@
   "subject": "Subject",
   "yourMessage": "Your Message",
   "email": "E-mail",
+  "phone": "Phone",
   "yourEmail": "Your E-mail",
   "website": "Website",
   "comment": "Comment",
   "send": "Send",
   "submitComment": "Submit Comment",
+
+  "joinText": "Resting is as important as working, Kick off your shoes, let down your hair Take 10 mins break.",
+  "EnterEmail": "Enter Your E-mail",
+  "joinButton": "READING YOUR FAVORITE BLOG",
 
   "continueReading": "Continue Reading",
 

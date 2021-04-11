@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withNamespaces } from 'react-i18next';
 import {NotificationManager} from 'react-notifications';
 import Image from '../../assets/images/contact-me-page.jpeg';
 
@@ -7,7 +8,7 @@ import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 
 
-const Contact = (props) => {
+const Contact = ({t}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({});
 
@@ -63,13 +64,13 @@ const Contact = (props) => {
     <div className="container contact">
       <div className="header" style={{backgroundImage: Image}}>
         <div className="header-text">
-          <h2>Get in touch</h2>
+          <h2>{t('getInTouch')}</h2>
         </div>
       </div>
       <div className="form-container">
         <div className="input-container">
           <label className="form-title">
-            Your name 
+            {t('yourName')}
           </label>
           <input 
             onChange={(v) => onChangeValue('name', v.target.value)}
@@ -79,7 +80,7 @@ const Contact = (props) => {
         </div>
         <div className="input-container">
           <span className="form-title">
-            Your E-mail 
+            {t('yourEmail')} 
           </span>
           <input 
             onChange={(v) => onChangeValue('email', v.target.value)}
@@ -89,7 +90,7 @@ const Contact = (props) => {
         </div>
         <div className="input-container">
           <span className="form-title">
-            Subject
+            {t('subject')}
           </span>
           <input 
             onChange={(v) => onChangeValue('subject', v.target.value)}
@@ -99,7 +100,7 @@ const Contact = (props) => {
         </div>
         <div className="input-container">
           <span className="form-title">
-            Your message 
+            {t('yourMessage')} 
           </span>
           <textarea 
             onChange={(v) => onChangeValue('message', v.target.value)}
@@ -113,11 +114,11 @@ const Contact = (props) => {
           onClick={submitForm}
           className="form-button"
           type='submit'
-          value={isLoading ? 'Sending....': 'Send'}
+          value={isLoading ? 'Sending....': t('send')}
         />
       </div>
     </div>
   )
 }
 
-export default Contact;
+export default withNamespaces()(Contact);

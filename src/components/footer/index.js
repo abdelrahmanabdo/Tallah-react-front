@@ -81,10 +81,10 @@ const  Footer = ({t}) => {
                <i className="fa fa-map mr-2" />  {data?.address}
             </Link>
             <Link className="list-item mb-3">
-               <i className="fa fa-phone mr-2" /> Phone: {data?.phone_number}
+               <i className="fa fa-phone mr-2"/> {t('phone')} {data?.phone_number}
             </Link>
             <Link className="list-item">
-               <i className="fa fa-envelope mr-2" /> Email: {data?.email}
+               <i className="fa fa-envelope mr-2" /> {t('email')}  {data?.email}
             </Link>
           </ul>
         </div>

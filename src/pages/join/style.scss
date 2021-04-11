@@ -1,22 +1,52 @@
-.container.join {
+.join-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  max-width: 350px;
+  background-color: rgba( 244, 244, 244, 1.00 );
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  padding: 2rem 0;
-  .coming-soon-container {
-    align-self: center;
-    padding: 50px;
-    background-color: #000;
-    h3 {
-      color: #FFF;
+  padding: 2.5rem 1.5rem 1rem;
+  z-index: 1000;
+  word-wrap: break-word;
+  box-shadow: 2px 2px 8px 0px #000;
+  animation-name: slide;
+  animation-duration: 2s;
+  .close-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 15px;
+    background-color: rgba( 238, 238, 34, 1.00 );
+    cursor: pointer;
+    .close-button {
+      color: #1e73be;
     }
+  }
+  .title {
+    line-height: 1.5;
+    text-align: start;
+  }
+  .email-input {
+    margin: 7px 0 10px 0;
+    padding: 8px;
+    border: 1px solid #CCC;
+    border-radius: 0;
+  }
+  .button {
+    margin: 20px 0 15px 0;
+    padding: 8px;
+    border: 2px solid transparent;
+    background-color: #012647;
+    color: #FFF;
   }
 }
 
 
 
 @media all and (max-width: 1024px) {
-  .container{ 
+  .join-wrapper{ 
     flex-direction: column;
   }
   .right {

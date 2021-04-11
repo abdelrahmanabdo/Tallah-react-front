@@ -39,6 +39,8 @@
   }
   .menu-item {
     padding: .5rem 0;
+    font-family: monospace;
+    font-weight: 600;
   }
   .menu-item:not(:last-child) {
     border-right: 3px solid #d4af37;

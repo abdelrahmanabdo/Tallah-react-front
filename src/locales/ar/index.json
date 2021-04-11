@@ -1,14 +1,14 @@
 {
   "contactUs" :  "تواصل معنا",
   "aboutUs" :  "عن طله",
-  "joinUs": "شاركنا",
+  "joinUs": "أشترك معنا",
   "chicChatBlog": "المقالات",
 
-  "fashion": "Fashion",
-  "beauty": "Beauty",
-  "lifeStyle": "LifeStyle",
-  "womenology": "Womenology",
-  "videos": "Videos",
+  "fashion": "موضة",
+  "beauty": "جمال",
+  "lifeStyle": "لايف استايل",
+  "womenology": "علم المرأة",
+  "videos": "فيديوهات",
 
   "categories": "الأقسام",
   "contactInfo": "معلومات التواصل ",
@@ -16,24 +16,26 @@
   "searchHere": "إبحث هنا ....",
   "latestPosts": "أحدث المقالات",
 
-  "getInTouch" : "Get In Touch",
+  "getInTouch" : "تواصل معنا",
 
   "leaveComment": "إترك تعليقك",
   "name": "الإسم",
-  "yourName": "إسمك",
-  "subject": "الموضوع",
-  "yourMessage": "رسالتك",
-  "email": "البريد الإلكتروني",
-  "yourEmail": "بريدك الإلكتروني",
-  "website": "الموقع الالكتروني",
-  "comment": "التعليق",
+  "yourName": "إسمك :",
+  "subject": "الموضوع :",
+  "yourMessage": "رسالتك :",
+  "email": "البريد الإلكتروني : ",
+  "phone": "رقم الموبايل : ",
+  "yourEmail": "بريدك الإلكتروني :",
+  "website": "الموقع الالكتروني :",
+  "comment": "التعليق :",
   "send": "إرسال",
   "submitComment": "تأكيد التعليق",
 
-  "continueReading": "أكمل القراءة",
+  "joinText": "الراحة لا تقل أهمية عن العمل ، اخلع حذائك ، وانزل شعرك خذ استراحة 10 دقائق.",
+  "EnterEmail": "أكتب بريدك الإلكتروني",
+  "joinButton": "إقرأ مقالك المفضل",
 
-  "subscriptionText": "Resting is as important as working, Kick off your shoes, let down your hair",
-  "subscriptionButtonText": "Reading Your Favorite Blog",
+  "continueReading": "أكمل القراءة",
 
   "copyright": ""
 }

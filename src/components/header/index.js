@@ -14,13 +14,16 @@ import endpoints from '../../config/endpoints';
 
 import './style.scss';
 import logo from '../../logo.png';
+import Join from '../../pages/join';
 
 const Header = ({t, i18n}) => {
   const [data, setData] = useState([]);
   const [showLanguageChanger, setShowLanguageChanger] = useState(false);
+  const [showJoinModal, setShowJoinModal] = useState(false);
+  const JOIN_MODAL_TIME = 10000;
 
   /**
-   * Get settings data
+   * Get settings data.
    * @private
    */
   const getData = async () => {
@@ -30,26 +33,40 @@ const Header = ({t, i18n}) => {
   }
 
   /**
-   * Toggle language changer 
+   * Toggle language. 
    * @private
    */
   const toggleLanguageChanger = () => setShowLanguageChanger(!showLanguageChanger);
 
   /**
-   * Change language
+   * Change language.
    * @private
    */
   const changeLanguage = (lang) => {
     localStorage.setItem('lang', lang);
     i18n.changeLanguage(lang);
-    const direction = lang === 'ar' ? 'rtl' : 'lrt';
+    const direction = lang === 'ar'
+      ? 'rtl' 
+      : 'lrt';
     document
       .getElementsByTagName('html')[0]
       .setAttribute("dir", direction);
     setShowLanguageChanger(!showLanguageChanger);
   }
 
-  useEffect(() => getData(), []);
+  /**
+   * Show join modal after 2 mins of opening site
+   * 
+   * @private
+   */
+  const regularJoinShow = () => {
+    setTimeout(() => setShowJoinModal(true), JOIN_MODAL_TIME);
+  }
+
+  useEffect(() => {
+    getData();
+    regularJoinShow();
+  }, []);
 
   return (
     <div className="header-wrapper">
@@ -163,7 +180,6 @@ const Header = ({t, i18n}) => {
           }
         </div>
       </div>
-
       <div className="nav">
         <NavLink className="link" to="/chic-chat-blog/All">
           {t('chicChatBlog')}
@@ -171,13 +187,14 @@ const Header = ({t, i18n}) => {
         <NavLink className="link" to="/about">
            {t('aboutUs')}
         </NavLink>
-        <NavLink className="link" to="/join">
+        <a className="link" href="#" onClick={() => setShowJoinModal(true)}>
           {t('joinUs')}
-        </NavLink>
+        </a>
         <NavLink className="link" to="/contact">
           {t('contactUs')}
         </NavLink>
       </div>
+      { showJoinModal &&  <Join onCloseModal={() => setShowJoinModal(!showJoinModal)} /> }
     </div>
   )
 }
