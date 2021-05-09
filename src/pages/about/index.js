@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { withNamespaces } from 'react-i18next';
 import './style.scss';
 import AboutImage from '../../assets/images/about-us-image.png';
 import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 import Spinner from '../../components/spinner';
 
-const About = (props) => {
+const About = ({t, i18n}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -31,14 +32,14 @@ const About = (props) => {
       />
       <div className="right">
         <h3 className="title">
-          {data?.title}
+        { i18n.language === 'ar' && data.title_ar ? data?.title_ar : data.title }
         </h3>
         <p className="text">
-          {data?.text}
+        { i18n.language === 'ar' && data.text_ar ? data?.text_ar : data.text }
         </p>
       </div>
     </div>
   )
 }
 
-export default About;
+export default withNamespaces()(About);

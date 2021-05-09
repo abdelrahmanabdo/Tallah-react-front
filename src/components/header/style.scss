@@ -15,7 +15,7 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    flex-direction: row;  
+    flex-direction: row;
     flex-wrap: wrap;
   }
   .social-link {
@@ -39,8 +39,7 @@
   }
   .menu-item {
     padding: .5rem 0;
-    font-family: monospace;
-    font-weight: 600;
+    font-weight: 500;
   }
   .menu-item:not(:last-child) {
     border-right: 3px solid #d4af37;
@@ -57,18 +56,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0;
+    margin: 25px 0;
     align-self: center;
   }
   .logo-img {
     width: 150px;
     height: 170px;
     margin: 0 25px;
-    &:hover {
-      -webkit-animation:spin 2s linear infinite;
-      -moz-animation:spin 2s linear infinite;
-      animation:spin 2s linear infinite;
-    }
   }
   .language-changer-container {
     position: relative;
@@ -103,6 +97,7 @@
         .lang-list-item {
           margin-bottom: 5px;
           text-align: center;
+          font-size: 18px;
           .active {
             color: #d4af37;
           }
@@ -130,6 +125,48 @@
     text-decoration: none;  
   }
 
+  .logo-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: #012647;
+    position: relative;
+    margin-top: 25px;
+  }
+
+  .side-menu-img {
+     width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .small-logo-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  aside {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #012647;
+    position: absolute;
+    padding: 15px 0 20px 25px;
+    -webkit-transition: width .5s; 
+    transition: width .5s;
+    z-index: 9999;
+    top: 80px;
+    right: 0;
+    left: 0;
+
+    .link {
+      padding: 7px 0;
+      font-size: 19px;
+    }
+  }
+
   .active {
     color: #d4af37 !important;
   }
@@ -151,11 +188,14 @@
     width: 100%;
     justify-content: center;
   }
+
+  .language-changer-container {
+    margin: 10px 0;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 110px;
+  }
 }
 }
-
-
-
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

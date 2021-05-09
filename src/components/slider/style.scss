@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding:30px;
+  padding: 30px 25px !important;
   width: 100%;
   height: auto;
   min-height: 65vh;
@@ -12,8 +12,8 @@
     display: flex;
     flex-direction: column;
     .blog-item {
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
       margin-bottom: 10px;
       border-radius: 10px;
       cursor: pointer;
@@ -39,12 +39,14 @@
     .tags {
       font-size: 17px;
       margin-bottom: 25px;
+      text-align: start;
     }
     .title {
       font-size: 37px;
       font-family: 'Playfair Display';
       width: 70%;
       margin-bottom: 30px;
+      text-align: start;
     }
     .text {
       overflow: hidden;
@@ -52,6 +54,7 @@
       display: -webkit-box;
       -webkit-line-clamp: 10; /* number of lines to show */
       -webkit-box-orient: vertical;
+      text-align: start;
     }
     .continue-reading-button {
       align-self: flex-start;
@@ -70,19 +73,21 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .left-blogs {
-      flex-direction: row;
-      margin-bottom: 20px;
-      .blog-item {
-        margin-right: 10px;
-      }
+  .left-blogs {
+    margin-bottom: 20px;
+    .blog-item {
+      margin-right: 10px;
     }
+  }
 }
 
 @media screen and (max-width: 699px) {
   .container.slider {
     padding: 15px !important;
     min-height: none;
+    .left-blogs {
+      flex-direction: row;
+    }
     .blog-details {
       .text {
         overflow: hidden;

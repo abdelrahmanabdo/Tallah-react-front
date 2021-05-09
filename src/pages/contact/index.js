@@ -28,11 +28,12 @@ const Contact = ({t}) => {
    * @private
    */
   const validate = () => {
-    if (!data.name) return NotificationManager.error('Please insert your name'), false;
-    if (!data.email) return NotificationManager.error('Please insert your E-mail'), false;
-    if (!data.subject) return NotificationManager.error('Please insert Message subject'), false;
+    if (!data.name) return NotificationManager.error(t('insertName')), false;
+    if (!data.email) return NotificationManager.error(t('insertEmail')), false;
+    if (!data.email.match(/\S+@\S+\.\S+/)) return NotificationManager.error(t('validEmail')), false;
+    if (!data.subject) return NotificationManager.error(t('insertSubject')), false;
     if (data.subject.length < 3) return NotificationManager.error('Subject must be at least 3 characters'), false;
-    if (!data.message) return NotificationManager.error('Please insert your Message'), false;
+    if (!data.message) return NotificationManager.error(t('insertMessage')), false;
     return true;
   }
 
@@ -49,7 +50,7 @@ const Contact = ({t}) => {
          setIsLoading(false);
         if (res.data.success) {
           NotificationManager.success('Your message sent successfully, Thanks');
-          setData({});
+          clearInputs();
         }
       })
       .catch((err) => {
@@ -58,6 +59,12 @@ const Contact = ({t}) => {
         Object.keys(errors)
           .forEach(e => NotificationManager.error(errors[e][0]));
       });
+  }
+
+  const clearInputs = () => {
+    Array.from(document.querySelectorAll("input")).forEach(input => (input.value = ""));
+    Array.from(document.querySelectorAll("textarea")).forEach(input => (input.value = ""));
+    setData({});
   }
 
   return (
@@ -107,6 +114,7 @@ const Contact = ({t}) => {
             defaultValue={data.message}
             className="form-input"
             rows={7}
+            maxLength="254"
           >
           </textarea>
         </div>

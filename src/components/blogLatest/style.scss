@@ -50,14 +50,15 @@
 
         .title {
           color: #000;
+          text-align: start;
         }
         .title:hover {
           color: #d4af37;
         }
-
         span {
           font-size: 14px;
           color: #CCC;
+          text-align: start;
         }
       }
     }

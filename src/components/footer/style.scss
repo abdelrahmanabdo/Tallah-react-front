@@ -70,13 +70,10 @@
   color: #d4af37;
 }
 .foot-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   background: #000;
-  padding: 0 18rem;
+  padding: 20px 12%;
+  text-align: center;
 }
 .foot-container span {
   flex: 1;
@@ -85,7 +82,7 @@
 }
 .foot-container .social-list {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   list-style: none;
 }
 .social-list .social-list-item {
@@ -112,7 +109,7 @@
     flex-direction: column;
   }
   .foot-container {
-    padding: 10px;
+    padding: 20px  5%;
    }
 }
 

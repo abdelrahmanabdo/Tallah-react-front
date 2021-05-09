@@ -26,6 +26,8 @@
     .tags {
       margin-bottom: 15px;
       font-size: 12px;
+      text-align: start;
+
     }
     .title {
       font-size: 3rem;
@@ -33,11 +35,12 @@
       line-height: normal;
       color: #000000;
       margin-bottom: 15px;
-
+      text-align: start;
     }
     .blog-brief {
       border-bottom: 1px solid #e2e8f0;
       padding-bottom: 20px;
+      text-align: start;
       .section {
         margin: 15px 0;
         .section:not(:last-child){ 
@@ -60,6 +63,7 @@
     .blog-body {
       font-size: 16px;
       margin-top: 20px;
+      text-align: start;
     }
     .comment-container {
       border-top: 1px solid #e2e8f0;
@@ -99,11 +103,15 @@
     width: 100%;
     padding: 10px;
     .left {
-      padding-right: 0;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
       .comment-container {
         .form-header {
           flex-direction: column;
         }
+      }
+      .title {
+        font-size: 2rem;
       }
     }
   }

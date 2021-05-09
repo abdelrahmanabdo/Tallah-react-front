@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'react-notifications/lib/notifications.css';
 import i18n  from  './i18n';
+import ReactGA from 'react-ga'
 
 // Language Handling
 const currentLang = localStorage.getItem('lang') || 'en';
@@ -18,6 +19,10 @@ const direction = currentLang === 'ar' ?
 document
   .getElementsByTagName('html')[0]
   .setAttribute("dir", direction);
+
+
+// Google Analytics 
+ReactGA.initialize('G-4DQXXFBFMH');
 
 ReactDOM.render(
   <>

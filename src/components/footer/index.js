@@ -57,19 +57,19 @@ const  Footer = ({t}) => {
         <div className="menu-list">
           <span className="list-title">{t('categories')}</span>
           <ul className="menu-items">
-            <Link to="/chic-chat-blog/Fashion"  className="list-item">
+            <Link to="/chit-chat-blog/Fashion"  className="list-item">
                  {t('fashion')}
             </Link>
-            <Link to="/chic-chat-blog/Beauty" className="list-item">
+            <Link to="/chit-chat-blog/Beauty" className="list-item">
                 {t('beauty')}
             </Link>
-            <Link to="/chic-chat-blog/LifeStyle"  className="list-item">
+            <Link to="/chit-chat-blog/LifeStyle"  className="list-item">
                  {t('lifeStyle')}
             </Link>
-            <Link to="/chic-chat-blog/Womenology"  className="list-item">
+            <Link to="/chit-chat-blog/Womenology"  className="list-item">
                 {t('womenology')}
             </Link>
-            <Link to="/chic-chat-blog/Videos"  className="list-item">  
+            <Link to="/chit-chat-blog/Videos"  className="list-item">  
                 {t('videos')}
             </Link>
           </ul>
@@ -77,23 +77,23 @@ const  Footer = ({t}) => {
         <div className="menu-list">
           <span className="list-title">{t('contactInfo')}</span>
           <ul className="menu-items">
-            <Link className="list-item mb-3">
+            <a className="list-item mb-3">
                <i className="fa fa-map mr-2" />  {data?.address}
-            </Link>
-            <Link className="list-item mb-3">
+            </a>
+            <a className="list-item mb-3">
                <i className="fa fa-phone mr-2"/> {t('phone')} {data?.phone_number}
-            </Link>
-            <Link className="list-item">
+            </a>
+            <a className="list-item" href={'mailto:'+ data?.email}>
                <i className="fa fa-envelope mr-2" /> {t('email')}  {data?.email}
-            </Link>
+            </a>
           </ul>
         </div>
       </div>
       <div className="foot-container">
-        <span style={{textAlign: 'start'}}>
+        <span>
           © Copyright 2021 {data?.site_url || 'Tallah'}
         </span>
-        <ul className="social-list">
+        {/* <ul className="social-list">
           <a href={data?.twitter_url} className="social-list-item">
             <i className="fa fa-twitter" />
           </a>
@@ -106,7 +106,7 @@ const  Footer = ({t}) => {
           <a href={data?.facebook_url} className="social-list-item">
             <i className="fa fa-facebook" />
           </a>
-        </ul>
+        </ul> */}
       </div>
     </div>
   )

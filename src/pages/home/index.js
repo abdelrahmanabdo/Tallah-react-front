@@ -6,9 +6,6 @@ import './style.scss';
 
 const Home = (props) => {
 
-  useEffect(() => {
-  }, []);
-
   return (
     <div className="container home">
       <Slider />

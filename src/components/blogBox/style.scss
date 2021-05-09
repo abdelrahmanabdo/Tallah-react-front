@@ -22,6 +22,7 @@
   .tags {
     margin-bottom: 10px;
     font-size: 12px;
+    text-align: start;
   }
   .title {
     color: #000000;
@@ -30,6 +31,7 @@
     line-height: normal;
     margin: 30px 0 !important; 
     margin-bottom: 30px;
+    text-align: start;
   }
   .title:hover {
     color: #d4af37;
@@ -37,6 +39,7 @@
   }
   .details {
     margin: 15px 0;
+    text-align: start;
     .section:not(:last-child){ 
       padding: 0  10px;
       border-right: 2px solid #CCC;
@@ -59,6 +62,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 4; /* number of lines to show */
     -webkit-box-orient: vertical;
+    text-align: start;
   }
 }
 

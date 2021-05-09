@@ -2,7 +2,7 @@
   "contactUs" :  "Contact Us",
   "aboutUs" :  "About Us",
   "joinUs": "Join Us",
-  "chicChatBlog": "Chic Chat Blog",
+  "chitChatBlog": "Chit Chat Blog",
 
   "fashion": "Fashion",
   "beauty": "Beauty",
@@ -20,7 +20,7 @@
 
   "leaveComment": "Leave comment",
   "name": "Name",
-  "yourName": "Your E-mail",
+  "yourName": "Your Name",
   "subject": "Subject",
   "yourMessage": "Your Message",
   "email": "E-mail",
@@ -31,14 +31,21 @@
   "send": "Send",
   "submitComment": "Submit Comment",
 
+  "insertName": "Please Insert Your Name",
+  "insertEmail": "Please Insert Your E-mail",
+  "validEmail": "Please Insert Valid E-mail",
+  "validWebsite": "Please Insert Valid Website",
+  "recurredEmail": "This E-mail has been subscribed before, Thanks",
+  "insertComment": "Please Insert Your Comment",
+  "minimumCommentLimit": "Enter minimum 100 words",
+  "insertMessage": "Please Insert Your Message",
+  "insertSubject": "Please Insert Your Subject",
+
   "joinText": "Resting is as important as working, Kick off your shoes, let down your hair Take 10 mins break.",
-  "EnterEmail": "Enter Your E-mail",
+  "EnterEmail": "Enter Your E-mail here.",
   "joinButton": "READING YOUR FAVORITE BLOG",
+  "subscriptionThanks": "We are Happy that you are member of  our circle now, thank you",
 
   "continueReading": "Continue Reading",
-
-  "subscriptionText": "Resting is as important as working, Kick off your shoes, let down your hair",
-  "subscriptionButtonText": "Reading Your Favorite Blog",
-
   "copyright": "© Copyright 2021 Tallah"
 }

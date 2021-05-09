@@ -11,6 +11,8 @@ body {
   border-radius: 10px !important;
 }
 .container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .page-content-wrapper {
@@ -18,44 +20,51 @@ body {
   padding: 30px 0;
 }
 
-/* @media all and (max-width: 1124px) {
-  .page-content-wrapper {
-    padding: 30px 10px;
-  }
-} */
-
-
-  .form-container {
+.form-container {
     width: 50%;
     margin: 30px 0;
-  }
+}
 
-  .input-container {
+.input-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-  }
-  .form-title {
+}
+.form-title {
     box-sizing: border-box;
     border-width: 0;
     border-style: solid;
     border-color: #e2e8f0;
     text-align: start;
-  }
-  .form-input {
+}
+.form-input {
     margin: 5px 0;
     padding: 7px ;
     border: 1px solid #bbb;
     outline: none;
-  }
-  .form-button {
+}
+.form-button {
     width: 100%;
     background: #3a3a3a;
     color: #fff;
     padding: 10px;
     outline: none;
-  }
+}
 
 input {
   border-radius: 0 !important;
 }
+
+@media all and (max-width: 699px) {
+  .container {
+    padding: 0 10px !important; 
+  }
+  .form-input {
+    margin: 0;
+  }
+
+  .input-container {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+} 

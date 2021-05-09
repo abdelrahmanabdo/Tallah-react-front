@@ -15,6 +15,7 @@ export default {
     'specializations' : 'specializations',
     'about': 'about',
     'settings': 'settings',
+    'subscription': 'subscription',
     
     //Authorized  
     /**

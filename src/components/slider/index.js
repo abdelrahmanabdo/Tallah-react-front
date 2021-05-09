@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import './style.scss';
 
 import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 
-import './style.scss';
 import Image from '../../assets/images/about-us-image.png';
-import { Link } from 'react-router-dom';
 
 export default function Slider() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [currentBlog, setCurrentBlog] = useState({});
 
   /**
@@ -16,22 +16,32 @@ export default function Slider() {
    * @private
    */
   const getData = async () => {
-    await api.get(endpoints.blog + '?featured')
+    await api.get(endpoints.blog + '?featured=true')
       .then(res => {
         setData(res.data.data);
         setCurrentBlog(res.data.data[0])
       });
   }
 
+  const changeSliderActiveImage = () => {
+        console.log('currentBlog', currentBlog)
+        console.log('data', data)
+
+        const currentIndex = data.findIndex((blog) => blog.id === currentBlog.id);
+        console.log(currentIndex)
+        setCurrentBlog(currentIndex == data.length ? data[0] : data[currentIndex]);
+  }
+
+  // const timer = () => setInterval(changeSliderActiveImage, 10000);
+
   /**
    * on Select blog
    */
-  const onSelectBlogToReview = (blog) => {
-    setCurrentBlog(blog)
-  }
+  const onSelectBlogToReview = (blog) => setCurrentBlog(blog)
 
   useEffect(() => {
-   getData();
+    getData();
+    // return () => clearInterval(timer);
   }, []);
 
   return (
@@ -40,7 +50,11 @@ export default function Slider() {
         data &&
         <div 
           className="container slider" 
-          style={{backgroundImage: `url(${currentBlog.image?.image ?? Image})`, backgroundRepeat: 'no-repeat'}}
+          style = {{
+              backgroundImage: `url(${currentBlog.image?.image ?? Image})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover'
+            }}
         >
           <div className="left-blogs">
             {
@@ -53,16 +67,19 @@ export default function Slider() {
             }
           </div>
           <div className="blog-details">
-            <span className="tags">
-              Fashion, LifeStyle, Womenology
-            </span>
+            {
+              currentBlog.hashtags &&
+              <span className="tags">
+                { currentBlog.hashtags?.reduce((acc, cur, index, array) => acc + cur.toUpperCase() + (index !== array.length - 1 ? ', ' : ''), '') }
+              </span>
+            }
             <span className="title">
               {currentBlog.title}
             </span>
             <p className="text">
               {currentBlog.body}
             </p>
-            <Link className="continue-reading-button" to={'/chic-chat/details/' + currentBlog.id}>
+            <Link className="continue-reading-button" to={'/chit-chat/details/' + currentBlog.id}>
               Continue Reading
             </Link>
           </div>
