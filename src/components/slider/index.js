@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './style.scss';
+import { withNamespaces } from 'react-i18next';
 
 import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 
 import Image from '../../assets/images/about-us-image.png';
 
-export default function Slider() {
+function Slider({i18n}) {
+
   const [data, setData] = useState([]);
   const [currentBlog, setCurrentBlog] = useState({});
 
@@ -23,35 +25,21 @@ export default function Slider() {
       });
   }
 
-  const changeSliderActiveImage = () => {
-        console.log('currentBlog', currentBlog)
-        console.log('data', data)
-
-        const currentIndex = data.findIndex((blog) => blog.id === currentBlog.id);
-        console.log(currentIndex)
-        setCurrentBlog(currentIndex == data.length ? data[0] : data[currentIndex]);
-  }
-
-  // const timer = () => setInterval(changeSliderActiveImage, 10000);
-
   /**
    * on Select blog
    */
   const onSelectBlogToReview = (blog) => setCurrentBlog(blog)
 
-  useEffect(() => {
-    getData();
-    // return () => clearInterval(timer);
-  }, []);
+  useEffect(() => getData(), []);
 
   return (
     <>
       {
-        data &&
+        (data && data.length > 0) &&
         <div 
           className="container slider" 
           style = {{
-              backgroundImage: `url(${currentBlog.image?.image ?? Image})`,
+              backgroundImage: `url(${currentBlog?.image?.image ?? Image})`,
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover'
             }}
@@ -70,15 +58,25 @@ export default function Slider() {
             {
               currentBlog.hashtags &&
               <span className="tags">
-                { currentBlog.hashtags?.reduce((acc, cur, index, array) => acc + cur.toUpperCase() + (index !== array.length - 1 ? ', ' : ''), '') }
+                { currentBlog.hashtags?.reduce((acc, cur, index, array) =>
+                  acc + (i18n.language === 'ar' && cur.ar ? cur.ar : cur.en) + (index !== array.length - 1 ? ', ' : ''), '')
+                }
               </span>
             }
             <span className="title">
-              {currentBlog.title}
+              {
+                i18n.language === 'ar' && currentBlog.title_ar ?
+                  currentBlog.title_ar:
+                  currentBlog.title
+              }
             </span>
-            <p className="text">
-              {currentBlog.body}
-            </p>
+            <div 
+                className = "text"
+                dangerouslySetInnerHTML = {{
+                  __html: (i18n.language === 'ar' && currentBlog.body_ar) ?
+                          currentBlog.body_ar: currentBlog.body
+                }}
+              />
             <Link className="continue-reading-button" to={'/chit-chat/details/' + currentBlog.id}>
               Continue Reading
             </Link>
@@ -88,3 +86,5 @@ export default function Slider() {
     </>
   )
 }
+
+export default withNamespaces()(Slider);

@@ -11,16 +11,20 @@ function BlogBox({data, i18n}) {
   return (
     <div className="box-wrapper">
       <Link to={'/chit-chat/details/' + data.id}  className="left">
-        <img src={data.image ? data.image.image : Image} />
+        <img src={data.image ? data.image.image : Image} alt="img"/>
       </Link>
       <div 
         className="right"
         style={{paddingRight: i18n.language === 'ar' ? '20px' : '0'}}
       >
-        <p className="tags">
-          { data.hashtags?.reduce((acc, cur, index, array) => 
-              acc + cur.toUpperCase() + (index !== array.length - 1 ? ', ' : ''), '') }
-        </p>
+        {
+          data.hashtags &&
+          <p className="tags">
+            { data.hashtags?.reduce((acc, cur, index, array) => 
+              acc + (i18n.language === 'ar' && cur.ar ? cur.ar : cur.en) + (index !== array.length - 1 ? ', ' : ''), '')
+            }
+          </p>
+        }
         <NavLink 
           to={'/chit-chat/details/' + data.id} 
           className="title"
@@ -35,7 +39,7 @@ function BlogBox({data, i18n}) {
         </NavLink>
         <div className='details'>
           <span className='section'>
-            {data.user?.name || 'Admin'}
+            {data.user?.role_id == '3' ? 'Tallah Admin' : data.user?.name}
           </span>
           <span className='section'>
           <i className="icon-message fa fa-clock-o mr-1"/> 
@@ -45,16 +49,16 @@ function BlogBox({data, i18n}) {
             <i className="icon-message fa fa-comment mr-1"/> {data.comments_count}
           </span>
         </div>
-        <p 
-          className="description" 
-          style={{margin: i18n.language === 'ar' ? '0 15px' : '15px 0'}}
-        >
-          { 
-            i18n.language === 'ar' && data.body_ar
-              ? data.body_ar
-              : data.body
-          }
-        </p>
+        <div 
+          className = "description"
+          style = {{
+            margin: i18n.language === 'ar' ? '0 15px' : '15px 0'
+          }}
+          dangerouslySetInnerHTML = {{
+            __html: i18n.language === 'ar' && data.body_ar ?
+                    data.body_ar : data.body
+          }}
+        />
       </div>
     </div>
   )

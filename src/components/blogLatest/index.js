@@ -53,15 +53,23 @@ function BlogLatest({t, i18n}) {
                     to={"/chit-chat/details/" + blog.id}
                     style={{marginLeft: i18n.language === 'ar' ? '10px' : '0px'}}
                   >
-                    <img className="image"  src={blog.image ? blog.image.image : Image} />
+                    <img className="image"  src={blog.image ? blog.image.image : Image} alt="img" />
                   </Link>
                   <div className="blog-data">
-                    <Link to={"/chit-chat/details/" + blog.id} className="title">
-                     {blog.title}
+                    <Link to={"/chit-chat/details/" + blog.id} className="title mb-2">
+                     {
+                       i18n.language === 'ar' && blog.title_ar ?
+                         blog.title_ar :
+                         blog.title
+                     }
                     </Link>
-                    <span>
-                      {blog.body.substring(0 ,30)}
-                    </span>
+                    <div 
+                          className = "text"
+                          dangerouslySetInnerHTML = {{
+                            __html: (i18n?.language === 'ar' && blog.body_ar) ?
+                                    blog.body_ar.substring(0, 30) : blog.body.substring(0, 30)
+                          }}
+                        />
                   </div>
                 </div>
               })

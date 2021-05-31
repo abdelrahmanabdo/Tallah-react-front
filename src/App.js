@@ -10,20 +10,24 @@ import Footer from './components/footer';
 import Join from './pages/join';
 import createHistory from 'history/createBrowserHistory';
 import ReactGA from 'react-ga';
+import TagManager from 'react-gtm-module';
 
 import { BrowserRouter, Switch,  Route } from 'react-router-dom';
 
+// Google analytics
 const history = createHistory()
 history.listen(location => {
-  ReactGA.set({
-    page: location.pathname
-  })
-  ReactGA.pageview(location.pathname)
+  ReactGA.set({ page: location.pathname }); 
+  ReactGA.pageview(location.pathname);
 });
 
-function App() {
+// Google tag manager
+const tagManagerArgs = {
+  gtmId: 'GTM-MDD5L39'
+};
+TagManager.initialize(tagManagerArgs);
 
-  useEffect(() => ReactGA.pageview(window.location.pathname), []);
+function App() {
 
   return (
     <div className="app-wrapper">

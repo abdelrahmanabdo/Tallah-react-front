@@ -87,43 +87,44 @@ const Join = ({onCloseModal, t}) => {
           </button>
         </div>)
         : (
-        <div className='box-bg'>
-          <div className='large-box'>
-            <div className="close-container" onClick={onCloseModal}>
-              <span className="close-button">X</span>
-            </div>
-            <div className="margin-content">
-
-              <h4 className="title">
-                Women's Day
-              </h4>
-              <p className="text">
-                Are you ready to celebrate all the good times? well, Come on!
-              </p>
-              <div className="email-container">
-                <p className="email-span">
-                  Enter your email to discover the yay in every day.
-                </p>
-                <input 
-                  className="email-input"
-                  onChange={(val) => onChangeValue('email', val.target.value)}
-                  placeholder={t('EnterEmail')}
-                />
-                <button
-                  disabled={isLoading}
-                  className="button" 
-                  onClick={submitForm} 
-                  className="email-submit-button"
-                >
-                  Woo hoo! I'm in!
-                </button>
-                <span className="close-text" onClick={onCloseModal}>
-                  Sorry! Maybe another time.
-                </span>
+          <div className='box-bg'>
+            <div className='golden-frame'>
+              <div className='large-box'>
+                <div className="close-container" onClick={onCloseModal}>
+                  <span className="close-button">X</span>
+                </div>
+                <div className="margin-content">
+                  {/* <h4 className="title">
+                    Women's Day
+                  </h4> */}
+                  <p className="text">
+                    {t('joinText')}
+                  </p>
+                  <div className="email-container">
+                    <p className="email-span">
+                      {t('joinHeaderText')}
+                    </p>
+                    <input 
+                      className="email-input"
+                      onChange={(val) => onChangeValue('email', val.target.value)}
+                      placeholder={t('EnterEmail')}
+                    />
+                    <button
+                      disabled={isLoading}
+                      className="button" 
+                      onClick={submitForm} 
+                      className="email-submit-button"
+                    >
+                      {t('joinBigModalButton')}
+                    </button>
+                    <span className="close-text" onClick={onCloseModal}>
+                      {t('sorryAnotherTime')}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         )
       }
     </div>

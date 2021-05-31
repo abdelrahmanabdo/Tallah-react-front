@@ -42,10 +42,13 @@
   "insertSubject": "Please Insert Your Subject",
 
   "joinText": "Resting is as important as working, Kick off your shoes, let down your hair Take 10 mins break.",
+  "joinHeaderText":"Enter your email to discover the yay in every day.",
   "EnterEmail": "Enter Your E-mail here.",
   "joinButton": "READING YOUR FAVORITE BLOG",
+  "joinBigModalButton": "Woo hoo! I'm in!",
+  "sorryAnotherTime": "Sorry! Maybe another time.",
   "subscriptionThanks": "We are Happy that you are member of  our circle now, thank you",
-
+  
   "continueReading": "Continue Reading",
   "copyright": "© Copyright 2021 Tallah"
 }

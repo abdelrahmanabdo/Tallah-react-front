@@ -42,17 +42,20 @@
       text-align: start;
     }
     .title {
-      font-size: 37px;
+      font-size: 35px;
       font-family: 'Playfair Display';
       width: 70%;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-align: start;
+      line-height: 45px;
     }
     .text {
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 10; /* number of lines to show */
+      line-height: 30px;
+      max-height: 120px;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       text-align: start;
     }
@@ -89,6 +92,10 @@
       flex-direction: row;
     }
     .blog-details {
+      .title {
+        font-size: 30px;
+        width: 100%;
+      }
       .text {
         overflow: hidden;
         text-overflow: ellipsis;

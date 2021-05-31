@@ -10,6 +10,9 @@ import api from '../../config/api';
 import endpoints from '../../config/endpoints';
 import Spinner from '../../components/spinner';
 import BlogLatest from '../../components/blogLatest';
+import SimpleImageSlider from "react-simple-image-slider";
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styles';
 
 function Details({i18n, t}) {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,7 +27,13 @@ function Details({i18n, t}) {
    */
   const getData = async () => {
     await api.get(`${endpoints.blog}/${id}`)
-            .then(res => setData({...res.data.data}), setIsLoading(false));
+            .then(res => {
+              let {data} = res.data;
+              if (data.images.length > 0) data.image = data.images.map((image) => image.source = image.image);
+              console.log(data.images)
+              setData({...data});
+              setIsLoading(false);
+            });
   }
 
   /**
@@ -102,13 +111,23 @@ function Details({i18n, t}) {
         data &&
         <>
           <div className="left"
-          style = {{
+            style = {{
               paddingRight: i18n.language === 'ar' ? 0 : '20px',
               paddingLeft: i18n.language === 'ar' ? '20px' : 0
-            }} >
-            <img src={data.images.length ? data.images[0].image : AboutImage} className="blog-image" />
+            }}
+          >
+            <AwesomeSlider 
+              cssModule={[AwesomeSliderStyles]}
+              animation = "foldOutAnimation"
+              media={data.images}
+              className="mb-5"
+            />
             <span className="tags">
-               { data?.hashtags?.reduce((acc, cur, index, array) => acc + cur.toUpperCase() + (index !== array.length - 1 ? ', ' : ''), '') }
+               { 
+                data.hashtags &&
+                data?.hashtags.reduce((acc, cur, index, array) => 
+                  acc + (i18n.language === 'ar' && cur.ar ? cur.ar : cur.en) + (index !== array.length - 1 ? ', ' : ''), '')
+               }
             </span>
             <span className="title">
             { i18n.language === 'ar' && data.title_ar 
@@ -116,18 +135,29 @@ function Details({i18n, t}) {
               : data.title.toUpperCase() }
             </span>
             <div className="blog-brief">
-              <span className="section" style={{paddingRight: 10, borderRight: '1px solid #CCC'}}>
+              <span className='section'
+                style = {{
+                  paddingRight: i18n.language === 'ar' ? 0 : '10px',
+                  paddingLeft: i18n.language === 'ar' ? '10px' : 0
+                }}
+              >
+                {data.user?.role_id == '3' ? 'Tallah Admin' : data.user?.name}
+              </span>
+              <span className="section" style={{paddingLeft: 10, borderLeft: '1px solid #CCC'}}>
                 <i className="icon-message fa fa-clock-o mr-1"/> { moment(data.created_at).fromNow()}
               </span>
-              <span className="section" style={{paddingLeft: 10}}>
+              {/* <span className="section" style={{paddingLeft: 10}}>
                 <i className="icon-message fa fa-comment mr-1"/> {data.comments_count || 0}
-              </span>
+              </span> */}
             </div>
-            <p  className="blog-body">
-              { i18n.language === 'ar' && data.body_ar 
-                ? data.body_ar 
-                : data.body }
-            </p>
+            <div className="blog-body" dangerouslySetInnerHTML = {
+              {
+                __html: i18n.language === 'ar' && data.body_ar ?
+                  data.body_ar :
+                  data.body
+              }
+            }
+            />
             <div className="comment-container">
               <h5 style={{textAlign: 'start'}}>{t('leaveComment')}</h5>
               <div className="form-header">
