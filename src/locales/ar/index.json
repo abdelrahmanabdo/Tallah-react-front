@@ -1,0 +1,65 @@
+{
+  "home": "الرئيسية",
+  "contactUs" :  "تواصل معنا",
+  "aboutUs" :  "عن طله",
+  "joinUs": "أشترك معنا",
+  "chitChatBlog": "المقالات",
+  "policy": "الخصوصية والسياسة",
+  
+  "fashion": "موضة",
+  "beauty": "جمال",
+  "lifeStyle": "لايف استايل",
+  "womenology": "علم المرأة",
+  "videos": "فيديوهات",
+
+  "categories": "الأقسام",
+  "contactInfo": "معلومات التواصل ",
+
+  "searchHere": "إبحث هنا ....",
+  "mostPopularPosts": "أحدث المقالات",
+
+  "getInTouch" : "تواصل معنا",
+
+  "leaveComment": "إترك تعليقك",
+  "name": "الإسم",
+  "emailAddress": "البريد الإلكتروني",
+  "yourName": "إسمك :",
+  "subject": "الموضوع :",
+  "yourMessage": "رسالتك :",
+  "email": "البريد الإلكتروني : ",
+  "phone": "رقم الموبايل : ",
+  "yourEmail": "بريدك الإلكتروني :",
+  "website": "الموقع الالكتروني :",
+  "comment": "التعليق :",
+  "send": "إرسال",
+  "submitComment": "تأكيد التعليق",
+
+  "insertName": "من فضلك أدخل الاسم أولا",
+  "insertEmail": "من فضلك أدخل البريد الإلكتروني أولا",
+  "validEmail": "من فضلك أدخل بريد ألكتروني صحيح",
+  "validWebsite": "من فضلك أدخل موقع الكتروني صحيح",
+  "recurredEmail": "هذا البريد الإلكتروني تم إلاشتراك به من قبل , شكرا لك",
+  "insertComment": "من فضلك أدخل تعليقك أولا",
+  "minimumCommentLimit": "من فضلك أدخل بحد أدني ٤ كلمات",
+  "insertMessage": "من فضلك أدخل رسالتك أولا",
+  "insertSubject": "من فضلك أدخل موضوع الرسالة أولا",
+
+  "joinText": "الراحة لا تقل أهمية عن العمل ، اخلعي حذائك ، واسدلي شعرك واستمتعي ب ١٠ دقائق استراحة.",
+  "joinHeaderText": "أكتب بريدك الإلكتروني واستكشف الجديد كل يوم.",
+  "EnterEmail": "أكتب بريدك الإلكتروني",
+  "joinButton": "إقرأ مقالك المفضل",
+  "joinBigModalButton": "نعم انا معكم",
+  "sorryAnotherTime": "أسف ربما مرة أخري.",
+  "subscriptionThanks": "نحن سعداء بأنك اصحبت فردا من اصدقائنا الأن, شكرا لك",
+
+  "continueReading": "أكمل القراءة",
+
+  "copyright": "",
+  "by": "بواسطة",
+  "search": "البحث",
+  "category": "الأقسام",
+  "connectUs": "تواصل بنا",
+
+  "readMore": "إقرا المزيد"
+
+}

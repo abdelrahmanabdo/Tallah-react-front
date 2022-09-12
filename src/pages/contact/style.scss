@@ -1,0 +1,32 @@
+.container.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  .header-text {
+    color: #D4AF37;
+    font-size: 36px;
+    padding: 20px 30px;
+    align-self: center;
+  }
+  .form-button {
+    color: #FFF;
+    font-size: 19px;
+    font-weight: 600;
+    border-radius: 5px !important;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .container.contact{ 
+    flex-direction: column;
+    .form-container  {
+      width: 100%;
+    }
+  }
+  .right {
+    flex: 1;
+    padding: 20px 0;
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "home": "Home",
+  "contactUs" :  "Contact Us",
+  "aboutUs" :  "About Us",
+  "joinUs": "Subscribe",
+  "chitChatBlog": "Chic Chat Blog",
+  "policy": "Privacy Policy",
+
+  "fashion": "Fashion",
+  "beauty": "Beauty",
+  "lifeStyle": "LifeStyle",
+  "womenology": "Womenology",
+  "videos": "Videos",
+
+  "categories": "Categories",
+  "contactInfo": "Contact Info",
+
+  "searchHere": "Search Here....",
+  "mostPopularPosts": "Most Popular",
+
+  "getInTouch" : "Get In Touch",
+
+  "leaveComment": "Leave comment",
+  "name": "Name",
+  "emailAddress": "Email",
+  "yourName": "Your Name",
+  "subject": "Subject",
+  "yourMessage": "Your Message",
+  "email": "E-mail",
+  "phone": "Phone",
+  "yourEmail": "Your E-mail",
+  "website": "Website",
+  "comment": "Comment",
+  "send": "Send",
+  "submitComment": "Submit Comment",
+
+  "insertName": "Please Insert Your Name",
+  "insertEmail": "Please Insert Your E-mail",
+  "validEmail": "Please Insert Valid E-mail",
+  "validWebsite": "Please Insert Valid Website",
+  "recurredEmail": "This E-mail has been subscribed before, Thanks",
+  "insertComment": "Please Insert Your Comment",
+  "minimumCommentLimit": "Enter minimum 4 words",
+  "insertMessage": "Please Insert Your Message",
+  "insertSubject": "Please Insert Your Subject",
+
+  "joinText": "Resting is as important as working, Kick off your shoes, let down your hair, take 10 mins break.",
+  "joinHeaderText":"Enter your email to discover the yay in every day.",
+  "EnterEmail": "Enter Your E-mail here.",
+  "joinButton": "READING YOUR FAVORITE BLOG",
+  "joinBigModalButton": "Woo hoo! I'm in!",
+  "sorryAnotherTime": "Sorry! Maybe another time.",
+  "subscriptionThanks": "We are Happy that you are member of  our circle now, thank you",
+  
+  "continueReading": "Continue Reading",
+  "copyright": "© Copyright 2021 Tallah",
+  "by": "By",
+  "search": "Search",
+  "category": "Category",
+  "connectUs": "Connect With Us",
+  "readMore": "Read More"
+}

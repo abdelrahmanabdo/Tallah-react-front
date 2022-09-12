@@ -1,0 +1,226 @@
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .nav-wrapper {
+    background: #012647;
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1360px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links .link {
+    color: #FFF;
+    margin: 0 14px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+  .nav-links .link:hover {
+    color: #d4af37;
+    text-decoration: none;  
+  }
+  .logo-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background: #012647;
+    position: relative;
+  }
+  .mobile-nav {
+    z-index: 10000000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .sidemenu-link {
+      padding: 20px 0 5px 00 ;
+      color: #012647;
+      font-size: 19px;
+      font-weight: 400;
+    }
+    .categories-title {
+      margin: 35px 0 15px 0;
+      color: #D4AF37;
+      font-weight: 500;
+      border-top: .5px solid #CCC;
+      padding-top: 10px;
+      font-size: 25px;
+    }
+  }
+  aside {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #012647;
+    position: absolute;
+    padding: 15px 0 20px 25px;
+    -webkit-transition: width .5s; 
+    transition: width .5s;
+    z-index: 9999;
+    top: 80px;
+    right: 0;
+    left: 0;
+    .link {
+      padding: 7px 0;
+      font-size: 18px;
+    }
+  }
+  .active {
+    color: #d4af37 !important;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    align-self: center;
+  }
+  .logo-img, .small-logo-img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+    object-fit: contain;
+  }
+  .language-changer-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 15px;
+    span {
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .change-icon {
+      width: 10px;
+      height: 10px;
+      margin:0 5px;
+      color: '#FFF'
+    }
+
+    .lang-list-container {
+      position: absolute;
+      top: 35px;
+      right: 0px;
+      border:  1px solid #CCC;
+      padding:  4px;
+      background-color: #FFF;
+      border-radius: 4px;
+      z-index: 10000;
+      .lang-list {
+        list-style: none;
+        padding: 0px 15px;
+        margin: unset;
+        .lang-list-item {
+          margin-bottom: 5px;
+          text-align: center;
+          font-size: 18px;
+          .active {
+            color: #d4af37;
+          }
+        }
+      }
+    }
+  }
+  .footer-wrapper {
+    padding: 15px 0;
+    background-color: #E9E9E9;
+  }
+  .footer-wrapper .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1360px;
+    margin: auto;
+  }
+  .social-container {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    margin: 0 0 0 10px;
+  }
+  .social-icon {
+    width: 25px;
+    height: 20px;
+  }
+  .social-icon:hover {
+    transform: scale(1.3);
+  }
+  .left-menu-container {
+    flex: 1;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  .menu-item {
+    padding: .2rem 0;
+    font-weight: 500;
+  }
+  .menu-item:not(:last-child) {
+    border-right: 3px solid #d4af37;
+  }
+  .menu-item a, .menu-item a:hover {
+    padding: 1rem;
+    text-decoration: none;
+    color: #012647;
+  }
+  .category-link {
+    color: #012647;
+  }
+
+  @media all and (max-width: 1024px) {
+    .head {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    } 
+    .left-menu-container {
+      margin-bottom: 15px;
+    }
+}
+
+@media all and (max-width: 799px) {
+  .left-menu-container{
+    width: 100%;
+    justify-content: center;
+  }
+  .language-changer-container {
+    margin: 10px 0;
+  }
+  .side-menu-img {
+    width: 40px;
+  }
+  .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+}

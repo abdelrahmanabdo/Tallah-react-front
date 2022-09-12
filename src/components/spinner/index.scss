@@ -1,0 +1,29 @@
+.spinner-container {
+  width: 100%;
+  height: 50vh;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+
+.logo-spinner {
+  width: 220px;
+  height: 150px;
+}
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .logo-spinner {
+//     animation: App-logo-spin infinite 3s linear;
+//   }
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

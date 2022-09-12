@@ -1,0 +1,159 @@
+.join-wrapper {
+  .small-box {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    max-width: 350px;
+    background-color: rgba( 244, 244, 244, 1.00 );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 1rem;
+    z-index: 1000;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 8px 0px #000;
+    animation-name: slide;
+    animation-duration: 2s;
+    .close-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 15px;
+      cursor: pointer;
+      .close-button {
+        color: #1e73be;
+      }
+    }
+    .title {
+      line-height: 1.5;
+      text-align: start;
+    }
+    .email-input {
+      margin: 7px 0 10px 0;
+      padding: 8px;
+      border: 1px solid #CCC;
+      border-radius: 0;
+    }
+    .button {
+      margin: 20px 0 15px 0;
+      padding: 8px;
+      border: 2px solid transparent;
+      background-color: #012647;
+      color: #FFF;
+    }
+  }
+  .box-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999999;
+    .golden-frame {
+        position: absolute;
+        width: 600px;
+        height: auto;
+        background: #FFF;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 6px solid  #012647;
+      .large-box {
+        .close-container {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 10px 15px;
+          cursor: pointer;
+          .close-button {
+            color: #012647;
+            font-weight: 600;
+            font-size: 22px;
+            font-family: fantasy;
+          }
+        }
+        .margin-content {
+          margin: 50px 45px 45px 50px;
+          .title {
+            line-height: 1.5;
+            text-align: center;
+            font-size: 38px;
+            font-family: fantasy;
+            font-weight: 500;
+          }
+          .text {
+            text-align: center;
+            margin-top: 35px;
+            font-family: monospace;
+            font-size: 27px;
+            font-weight: 600;
+            line-height: 1.3;
+            max-width: 420px;
+            margin: auto;
+            letter-spacing: -2px;
+          }
+          .email-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .email-span {
+              font-weight: 400;
+              font-size: 16px;
+              margin: 25px 0;
+            }
+            .email-input {
+              padding: 7px;
+              width: 63%;
+              border: 1px solid #CCC;
+              background: transparent;
+              margin: 5px 0 15px 0;
+              outline: none;
+              border-radius: 5px !important;
+            }
+            .email-submit-button {
+              width: 63%;
+              background: #D4AF37;
+              color: #FFF;
+              border: 0;
+              border-radius: 5px;
+              padding: 7px;
+              font-weight: 600;
+              &:hover {
+                background: #013a63;
+              }
+            }
+            .close-text {
+              margin-top: 15px;
+              cursor: pointer;
+              font-size: 15px;
+              font-weight: 400;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 800px) and (max-width: 1299px) {
+    .box-bg {
+      .large-box {
+        left: 15%;
+      }
+    }
+  }
+
+  @media all and (max-width: 1024px) {
+    .join-wrapper{ 
+      flex-direction: column;
+    }
+    .right {
+      flex: 1;
+      padding: 20px 0;
+    }
+  }
+}
+
